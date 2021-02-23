@@ -5,6 +5,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover" name="viewport">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
 	<link rel="icon" type="image/png" sizes="32x32" href="/imgs/favicons/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/imgs/favicons/favicon-16x16.png">
@@ -15,11 +16,16 @@
 	<meta name="theme-color" content="#ffffff">
 
 	<style type="text/css">
+		* {
+			outline: none;
+			appearance: none;
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+		}
 		body {
 			font-family: 'Poppins', sans-serif;
 			overflow-x: hidden;
 		}
-		div {
+		.body {
 			width: 600px;
 			max-width: 90%;
 			transform: translateX(-50%);
@@ -32,14 +38,121 @@
 			color: #999;
 			text-decoration: none;
 		}
+		.searchBox {
+			font-family: 'Poppins', sans-serif;
+			-webkit-appearance: none;
+			appearance: none;
+			width: calc(100% - 40px);
+			border: 0;
+			position: relative;
+			background: #eee;
+			padding: 10px 20px;
+			border-radius: 10px;
+			margin: 30px 0 0;
+			font-size: 22px;
+			display: block;
+		}
+		.searchAnswer {
+			width: calc(80% - 40px);
+			max-width: 400px;
+			border: 5px solid #eee;
+			padding: 10px 20px;
+			border-radius: 10px;
+			margin: 20px 0;
+		}
+		.answerTitle {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
 	</style>
 </head>
 <body>
-	<div>
+	<div class="body">
 		<a href="/" class="backButton">< Back</a>
 		<h1>Contact</h1>
-		<h2>We're currently having some issues with the Google Play store app. The app should be online again in a couple of days. Sorry for the inconvenience</h2>
-		<p>If you want to suggest any features that should be added to the app or have any other questions, please do not hesitate to <a href="mailto:mooferapp@gmail.com">send an e-mail to mooferapp@gmail.com</a>.</p>
+		<p>Before we put you trough to your support team, please check if the question has already been answered.</p>
+		<center>
+			<input type="text" class="searchBox" placeholder="Enter your question here" />
+			<div class="searchAnswers"></div>
+		</center>
 	</div>
+	<script type="text/javascript">
+		var answers = [{
+			"keywords": [
+				"playstore",
+				"transaction",
+				"app",
+				"play",
+				"store",
+				"failed",
+				"pay",
+				"download",
+				"android"
+			],
+			"title": "Can't download app in the Play Store",
+			"text": 'The app is currently not downloadable in the Play Store on Android. If you want to get updated on when the app is downloadable again, send an e-mail to <a href="mailto:mooferapp@gmail.com">mooferapp@gmail.com</a>'
+		},{
+			"keywords": [
+				"old",
+				"bike",
+				"es2",
+				"ex2",
+				"s2",
+				"x2",
+				"support"
+			],
+			"title": "Does Moofer support the ES2 / EX2",
+			"text": 'Moofer does not yet support older bikes such as the ES2 / EX2. An update that will be released in <i>1-2 weeks</i> will bring support for the ES2 / EX2. If you want to get notified when the app supports these older bikes, send an e-mail to <a href="mailto:mooferapp@gmail.com">mooferapp@gmail.com</a>'
+		},{
+			"keywords": [
+				"old",
+				"bike",
+				"es1",
+				"ex1",
+				"s1",
+				"x1",
+				"support",
+				"s"
+			],
+			"title": "Does Moofer support the ES1 / EX1",
+			"text": 'Moofer does not yet support older bikes such as the ES1 / EX1. An update that will be released in <i>a month</i> will bring support for the ES1 / EX1. If you want to get notified when the app supports these older bikes, send an e-mail to <a href="mailto:mooferapp@gmail.com">mooferapp@gmail.com</a>'
+		},{
+			"keywords": [
+				"feature",
+				"suggestion",
+			],
+			"title": "Feature suggestions",
+			"text": 'Feel free to share any feature ideas with <a href="mailto:mooferapp@gmail.com">mooferapp@gmail.com</a>!'
+		},{
+			"keywords": [
+				"warranty",
+				"piece",
+				"mind",
+			],
+			"title": "Warranty and Piece of Mind",
+			"text": 'Moofer sends the same Bluetooth codes as the official app, meaning the app shouldn\'t void your warranty or affect PoM. Next to that, there are no cases where a warranty has been voided. The app still is fully use at your own risk.'
+		},
+		];
+		$(".searchBox").on('keyup', function(){
+			$(".searchAnswers").empty();
+			Object.keys(answers).forEach(function(e){
+				x=$(".searchBox").val().split(' ');
+				x=x.map(function(value) {
+				    return value.toLowerCase();
+				});
+				if ($(x).filter(answers[e]['keywords']).length>0) {
+					$(".searchAnswers").append('<div class="searchAnswer"><div class="answerTitle">'+answers[e]['title']+'</div><div class="answerText">'+answers[e]['text']+'</div><div class="answerArrow"></div></div>');
+				}
+			});
+			if ($(".searchBox").val().split(' ').length>1||$(".searchAnswers").html()!=="") {
+				if ($(".searchAnswers").html()=="") {
+					$(".searchAnswers").append('<div class="searchAnswer on"><div class="answerTitle">No results</div><div class="answerText">Didn\'t find the answer you\'re looking for? Send a message to <a href="mailto:mooferapp@gmail.com">mooferapp@gmail.com</a></div><div class="answerArrow"></div></div>');
+				} else {
+					$(".searchAnswers").append('<div class="searchAnswer on"><div class="answerTitle">Get in touch</div><div class="answerText">Didn\'t find the answer you\'re looking for? Send a message to <a href="mailto:mooferapp@gmail.com">mooferapp@gmail.com</a></div><div class="answerArrow"></div></div>');
+				}
+			}
+		});
+	</script>
 </body>
 </html>
