@@ -102,23 +102,15 @@
 				"s"
 			],
 			"title": "Does Moofer support the ES1 / EX1",
-			"text": 'Moofer does not yet support older bikes such as the ES1 / EX1. An update that will be released in <i>a month</i> will bring support for the ES1 / EX1. If you want to get notified when the app supports these older bikes, send an e-mail to <a href="mailto:mooferapp@gmail.com">mooferapp@gmail.com</a>'
+			"text": 'Moofer does not yet support older bikes such as the ES1 / EX1. An update that will be released in <i>a month</i> will bring support for the ES1 / EX1. If you want to get notified when the app supports these older bikes, send an e-mail to <a href="mailto:mooferapp@gmail.com">mooferapp@gmail.com</a>.<br><i>Please allow 1-3 business days for a response.</i>'
 		},{
 			"keywords": [
 				"feature",
 				"suggestion",
 			],
 			"title": "Feature suggestions",
-			"text": 'Feel free to share any feature ideas with <a href="mailto:mooferapp@gmail.com">mooferapp@gmail.com</a>!'
-		},{
-			"keywords": [
-				"warranty",
-				"peace",
-				"mind",
-			],
-			"title": "Warranty and Peace of Mind",
-			"text": 'Moofer sends the same Bluetooth codes as the official app, meaning the app shouldn\'t void your warranty or affect PoM. Next to that, there are no cases where a warranty has been voided. The app still is fully use at your own risk.'
-		},
+			"text": 'Feel free to share any feature ideas with <a href="mailto:mooferapp@gmail.com">mooferapp@gmail.com</a>!<br><i>Please allow 1-3 business days for a response.</i>'
+		}
 		];
 		$(".searchBox").on('keyup', function(){
 			$(".searchAnswers").empty();
@@ -133,9 +125,9 @@
 			});
 			if ($(".searchBox").val().split(' ').length>1||$(".searchAnswers").html()!=="") {
 				if ($(".searchAnswers").html()=="") {
-					$(".searchAnswers").append('<div class="searchAnswer on"><div class="answerTitle">No results</div><div class="answerText">Didn\'t find the answer you\'re looking for? Send a message to <a href="mailto:mooferapp@gmail.com">mooferapp@gmail.com</a></div><div class="answerArrow"></div></div>');
+					$(".searchAnswers").append('<div class="searchAnswer on"><div class="answerTitle">No results</div><div class="answerText">Didn\'t find the answer you\'re looking for? Send a message to <a href="mailto:mooferapp@gmail.com">mooferapp@gmail.com</a>.<br><i>Please allow 1-3 business days for a response.</i></div><div class="answerArrow"></div></div>');
 				} else {
-					$(".searchAnswers").append('<div class="searchAnswer on"><div class="answerTitle">Get in touch</div><div class="answerText">Didn\'t find the answer you\'re looking for? Send a message to <a href="mailto:mooferapp@gmail.com">mooferapp@gmail.com</a></div><div class="answerArrow"></div></div>');
+					$(".searchAnswers").append('<div class="searchAnswer on"><div class="answerTitle">Get in touch</div><div class="answerText">Didn\'t find the answer you\'re looking for? Send a message to <a href="mailto:mooferapp@gmail.com">mooferapp@gmail.com</a>.<br><i>Please allow 1-3 business days for a response.</i></div><div class="answerArrow"></div></div>');
 				}
 			}
 		});
