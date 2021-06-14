@@ -1,154 +1,314 @@
+<!-- 
+
+||=====================================================||
+|| ███╗   ███╗ █████╗  █████╗ ███████╗███████╗██████╗  ||
+|| ████╗ ████║██╔══██╗██╔══██╗██╔════╝██╔════╝██╔══██╗ ||
+|| ██╔████╔██║██║  ██║██║  ██║█████╗  █████╗  ██████╔╝ ||
+|| ██║╚██╔╝██║██║  ██║██║  ██║██╔══╝  ██╔══╝  ██╔══██╗ ||
+|| ██║ ╚═╝ ██║╚█████╔╝╚█████╔╝██║	  ███████╗██║  ██║ ||
+|| ╚═╝	   ╚═╝ ╚════╝  ╚════╝ ╚═╝	  ╚══════╝╚═╝  ╚═╝ ||
+||=====================================================||
+
+
+This software is licenced. You may not
+- Republish material from Moofer
+- Sell, rent or sub-license material from Moofer
+- Reproduce, duplicate or copy material from Moofer
+- Redistribute content from Moofer
+
+See the Terms of Service here:
+https://moofer.app/terms-and-conditions/
+
+Proudly designed and developed with ☕ by Quinten Adema.
+
+-->
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Moofer - Terms and Conditions</title>
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover" name="viewport">
+	<head>
+		<title>Moofer - Terms and Conditions</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<meta name="title" content="Moofer - Get more out of your VanMoof">
+		<meta name="description" content="Moofer allows you to access previously inaccessible features of VanMoof bikes. Use coupon code ADV-VR11-DRBG-04CQ to get a €100 discount on your bike.">
+		<meta name="keywords" content="Moofer,app,VanMoof,bike,referral,coupon,discount,voucher,100,price,VanMoofer,App">
+		<meta name="robots" content="index, follow">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="language" content="English">
+		<meta name="author" content="Quinten Adema">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover" name="viewport">
+		<link rel="icon" type="image/png" sizes="32x32" href="/imgs/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/imgs/favicons/favicon-16x16.png">
+		<link rel="mask-icon" href="/imgs/favicons/safari-pinned-tab.svg" color="#9dcae1">
+		<link rel="shortcut icon" href="/imgs/favicons/favicon.ico">
+		<meta name="msapplication-TileColor" content="#ffff46">
+		<meta name="msapplication-config" content="/imgs/favicons/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+		<style type="text/css">
+			body {
+				font-family: 'Poppins', sans-serif;
+				background: #000;
+				overflow-x: hidden;
+				margin: 0;
+			}
+			.section {
+				width: 100%;
+				padding: 100px 0;
+				color: #fff;
+				transition: 0.6s padding cubic-bezier(.35,.79,.32,1);
+			}
+			.section1 {
+				background: linear-gradient(#1A1A21, #000);
+			}
+			.centerh {
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			.centerv {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			.center {
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%,-50%);
+			}
+			.downloadButton {
+				padding: 10px 20px;
+				border-radius: 30px;
+				background: #3377F6;
+				position: relative;
+				display: inline-block;
+				font-size: 20px;
+				font-weight: bold;
+				margin-top: 20px;
+				cursor: pointer;
+				transition: 0.2s cubic-bezier(.35,.79,.32,1);
+			}
+			.downloadButton:hover {
+				transform: translate(-50%, 2px);
+			}
+			.sectionTitle {
+				text-align: center;
+				font-size: 50px;
+				margin-top: 0;
+			}
+			::-webkit-scrollbar {
+				background-color: rgb(0, 0, 0);
+				height: 10px;
+				width: 10px;
+			}
+			::-webkit-scrollbar-button {
+				height: 0;
+				width: 0;
+			}
+			::-webkit-scrollbar-thumb {
+				background: #555;
+				border-radius: 10px;
+				transform: 0.2s background ease;
+			}
+			::-webkit-scrollbar-thumb:hover {
+				background: #999;
+			}
+			.sectionText, .footerText {
+				text-align: center;
+				max-width: 500px;
+				padding: 0 20px;
+				position: relative;
+				font-size: 18px;
+				color: #ccc;
+			}
+			.sectionText {
+				text-align: left;
+			}
+			.footerText {
+				margin-top: 100px;
+			}
+			.footer {
+				background: #1A1A21;
+				margin: 100px 0 0;
+			}
+			::selection {
+				color: black !important;
+				background: white !important;
+			}
+			.legalLink {
+				color: #888;
+				margin-right: 50px;
+				white-space: nowrap;
+				text-decoration: none;
+				font-weight: bold;
+			}
+			h2, b, a {
+				color:  #fff;
+			}
+			.grey {
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.5);
+				z-index: 1;
+				left: 0;
+				top: 0;
+				transition: 0.2s opacity ease;
+			}
+			.downloadModal {
+				position: fixed;
+				max-width: 400px;
+				width: calc(90% - 40px);
+				padding: 20px;
+				background: #fff;
+				border-radius: 20px;
+				z-index: 2;
+				transition: 0.2s opacity ease, 0.4s transform ease;
+				transform: translate(-50%, -60%);
+			}
+			.modalTitle {
+				font-size: 24px;
+				font-weight: bold;
+				margin-bottom: 30px;
+			}
+			.modalPlatformLink {
+				width: calc(50% - 20px);
+				margin: 10px;
+				cursor: pointer;
+				min-width: 220px;
+			}
+			.grey:not(.on), .downloadModal:not(.on) {
+				pointer-events: none;
+				opacity: 0;
+			}
+			.downloadModal:not(.on) {
+				transform: translate(-50%, -50%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="section section1">
+			<h1 class="sectionTitle">Terms and Conditions</h2>
+			<div class="sectionText centerh">
+				<p>These Terms and Conditions outline the rules for the use of Moofer.</p>
 
-	<link rel="icon" type="image/png" sizes="32x32" href="/imgs/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/imgs/favicons/favicon-16x16.png">
-	<link rel="mask-icon" href="/imgs/favicons/safari-pinned-tab.svg" color="#9dcae1">
-	<link rel="shortcut icon" href="/imgs/favicons/favicon.ico">
-	<meta name="msapplication-TileColor" content="#ffff46">
-	<meta name="msapplication-config" content="/imgs/favicons/browserconfig.xml">
-	<meta name="theme-color" content="#ffffff">
+				<p>This Agreement shall enter into force on December 1st, 2020.</p>
+				
+				<p>By using this app, you accept the Terms and Conditions. Do not continue to use Moofer if you do not accept the Terms and Conditions stated on this page.</p>
+				
+				<p>The following terminology applies to these Terms and Conditions, Privacy Statement, and all other Agreements: "Client", "You", "Your" and "Customer" refers to you, the person that currently uses this website or its app and is compliant to Moofer's Terms and Conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company, Moofer. Any use of the above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to same.</p>
 
-	<style type="text/css">
-		body {
-			font-family: 'Poppins', sans-serif;
-			overflow-x: hidden;
-		}
-		div {
-			width: 600px;
-			max-width: 90%;
-			transform: translateX(-50%);
-			left: 50%;
-			position: absolute;
-			padding: 5vh 0;
-		}
-		.backButton {
-			font-size: 14px;
-			color: #999;
-			text-decoration: none;
-		}
-	</style>
-</head>
-<body>
-	<div>
-		<a href="/" class="backButton">< Back</a>
-		<h1>Terms and Conditions</h1>
+				<p>We may modify these terms at any time with notice to our customers. If you do not accept with the new terms, it's clients responsibility to stop using our services directly.</p>
+				
+				<h2>License</h2>
+				<p>Unless otherwise stated, Moofer and/or its licensors own the intellectual property rights for all material on Moofer. All intellectual property rights are reserved. You may access this from Moofer for your own personal use.</p>
 
-		<p>These terms and conditions outline the rules and regulations for the use of Moofer.</p>
+				<p>You must not:</p>
+				<ul>
+					<li>Republish material from Moofer</li>
+					<li>Sell, rent or sub-license material from Moofer</li>
+					<li>Reproduce, duplicate or copy material from Moofer</li>
+					<li>Redistribute content from Moofer</li>
+				</ul>
 
-		<p>By using this app we assume you accept these terms and conditions. Do not continue to use Moofer if you do not agree to take all of the terms and conditions stated on this page.</p>
 
-		<p>The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements: "Client", "You" and "Your" refers to you, the person log on this website and compliant to the Company’s terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Client in the most appropriate manner for the express purpose of meeting the Client’s needs in respect of provision of the Company’s stated services, in accordance with and subject to, prevailing law of Netherlands. Any use of the above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to same.</p>
-		<h2>License</h2>
+				<p>Parts of this app offer an opportunity for users to share information. Moofer does not filter, edit, publish or review shared information prior to their presence on the app. Shared information by users do not reflect the views and opinions of Moofer, its agents and/or affiliates. The information reflect the views and opinions of the person who post their views and opinions. To the extent permitted by applicable laws, Moofer shall not be liable for the this information or for any liability, damages or expenses caused and/or suffered as a result of any use of and/or posting of and/or appearance of the Comments on this website and/or app.</p>
 
-		<p>Unless otherwise stated, Moofer and/or its licensors own the intellectual property rights for all material on Moofer. All intellectual property rights are reserved. You may access this from Moofer for your own personal use subjected to restrictions set in these terms and conditions.</p>
+				<p>You warrant and represent that:</p>
 
-		<p>You must not:</p>
-		<ul>
-			<li>Republish material from Moofer</li>
-			<li>Sell, rent or sub-license material from Moofer</li>
-			<li>Reproduce, duplicate or copy material from Moofer</li>
-			<li>Redistribute content from Moofer</li>
-		</ul>
+				<ul>
+					<li>You are entitled to share information on our App and have all necessary licenses and consents to do so</li>
+					<li>The information does not invade any intellectual property right, including without limitation copyright, patent or trademark of any third party</li>
+					<li>The information does not contain any defamatory, libelous, offensive, indecent or otherwise unlawful material which is an invasion of privacy</li>
+					<li>The information will not be used to solicit or promote business or custom or present commercial activities or unlawful activity</li>
+				</ul>
 
-		<p>This Agreement shall enter into force on December 1st, 2020.</p>
+				<h2>Hyperlinking to our services</h2>
 
-		<p>Parts of this app offer an opportunity for users to share information. Moofer does not filter, edit, publish or review shared information prior to their presence on the app. Shared information by users do not reflect the views and opinions of Moofer, its agents and/or affiliates. The information reflect the views and opinions of the person who post their views and opinions. To the extent permitted by applicable laws, Moofer shall not be liable for the this information or for any liability, damages or expenses caused and/or suffered as a result of any use of and/or posting of and/or appearance of the Comments on this website.</p>
+				<p>The following organizations may link to our App without prior written approval:</p>
+				<ul>
+					<li>Search engines</li>
+					<li>News organizations</li>
+					<li>Online directory distributors may link to our App in the same manner as they hyperlink to the Websites of other listed businesses</li>
+				</ul>
 
-		<p>You warrant and represent that:</p>
+				<p>These organizations may link to our home page, to publications or to other App information so long as the link: (a) is not in any way deceptive; (b) does not falsely imply sponsorship, endorsement or approval of the linking party and its products and/or services; and (c) fits within the context of the linking party's site.</p>
 
-		<ul>
-			<li>You are entitled to share information on our App and have all necessary licenses and consents to do so</li>
-			<li>The information does not invade any intellectual property right, including without limitation copyright, patent or trademark of any third party</li>
-			<li>The information does not contain any defamatory, libelous, offensive, indecent or otherwise unlawful material which is an invasion of privacy</li>
-			<li>The information will not be used to solicit or promote business or custom or present commercial activities or unlawful activity</li>
-		</ul>
+				<p>We may consider and approve other link requests from party's that are not active in any unlawful activities.</p>
 
-		<h2>Hyperlinking to our App</h2>
+				<p>We will approve link requests if we decide that: (a) the link would not make us look unfavorably to ourselves or to our accredited businesses; (b) the organization does not have any negative records with us; (c) the benefit to us from the visibility of the hyperlink compensates the absence of Moofer; and (d) the link is in the context of general resource information; (e) is not in any way deceptive; (f) does not falsely imply sponsorship, endorsement or approval of the linking party and its products or services; and (g) fits within the context of the linking party's site.</p>
 
-		<p>The following organizations may link to our App without prior written approval:</p>
+				<p>If you would like to link to Moofer and are not one of the aforementioned organizations that we allow to link to our services without notice, you must inform us by sending an e-mail to Moofer. Please include your name, your organization name, contact information as well as the URL of your site, a list of any URLs from which you intend to link to our App, and a list of the URLs on our site to which you would like to link. We hope to respond within 7 business days, but it may take longer for us to respond.</p>
 
-		<ul>
-			<li>Search engines</li>
-			<li>News organizations</li>
-			<li>Online directory distributors may link to our App in the same manner as they hyperlink to the Websites of other listed businesses</li>
-			<li>System wide Accredited Businesses except soliciting non-profit organizations, charity shopping malls, and charity fundraising groups which may not hyperlink to our Web site</li>
-		</ul>
+				<p>Approved organizations may hyperlink to our App as follows:</p>
 
-		<p>These organizations may link to our home page, to publications or to other App information so long as the link: (a) is not in any way deceptive; (b) does not falsely imply sponsorship, endorsement or approval of the linking party and its products and/or services; and (c) fits within the context of the linking party’s site.</p>
+				<ul>
+					<li>By use of our corporate name</li>
+					<li>By use of the uniform resource locator being linked to</li>
+					<li>By use of any other description of our App being linked to that makes sense within the context and format of content on the linking party's site</li>
+				</ul>
 
-		<p>We may consider and approve other link requests from the following types of organizations:</p>
+				<p>No use of Moofer's logo or other artwork will be allowed for linking absent a trademark license agreement.</p>
 
-		<ul>
-			<li>Commonly-known consumer and/or business information sources</li>
-			<li>Dot.com community sites</li>
-			<li>Associations or other groups representing charities</li>
-			<li>Online directory distributors</li>
-			<li>Internet portals</li>
-			<li>Accounting, law and consulting firms</li>
-			<li>Educational institutions and trade associations</li>
-		</ul>
+				<h2>Content Liability</h2>
 
-		<p>We will approve link requests from these organizations if we decide that: (a) the link would not make us look unfavorably to ourselves or to our accredited businesses; (b) the organization does not have any negative records with us; (c) the benefit to us from the visibility of the hyperlink compensates the absence of Moofer; and (d) the link is in the context of general resource information.</p>
+				<p>We shall not be hold responsible for any content that appears on your App. You agree to protect and defend us against all claims that is rising on our App. No link(s) should appear on any Website that may be interpreted as libelous, obscene or criminal, or which infringes, otherwise violates, or advocates the infringement or other violation of, any third party rights.</p>
 
-		<p>These organizations may link to our App so long as the link: (a) is not in any way deceptive; (b) does not falsely imply sponsorship, endorsement or approval of the linking party and its products or services; and (c) fits within the context of the linking party’s site.</p>
+				<h2>Your Privacy</h2>
 
-		<p>If you are one of the organizations listed in paragraph 2 above and are interested in linking to our App, you must inform us by sending an e-mail to Moofer. Please include your name, your organization name, contact information as well as the URL of your site, a list of any URLs from which you intend to link to our App, and a list of the URLs on our site to which you would like to link. Wait 2-3 weeks for a response.</p>
+				<p>Please read our <a href="https://moofer.app/privacy-policy">Privacy Policy</a>.</p>
 
-		<p>Approved organizations may hyperlink to our App as follows:</p>
+				<h2>Reservation of Rights</h2>
 
-		<ul>
-			<li>By use of our corporate name</li>
-			<li>By use of the uniform resource locator being linked to</li>
-			<li>By use of any other description of our App being linked to that makes sense within the context and format of content on the linking party’s site</li>
-		</ul>
+				<p>We reserve the right to request that you remove all links or any particular link to our App. You approve to immediately remove all links to our App upon request. We also reserve the right to amen these Terms and Conditions and it's linking policy at any time. By continuously linking to our App, you agree to be bound to and follow these linking Terms and Conditions.</p>
 
-		<p>No use of Moofer's logo or other artwork will be allowed for linking absent a trademark license agreement.</p>
+				<h2>Removal of links</h2>
 
-		<h2>iFrames</h2>
+				<p>If you find any link on our App that is offensive for any reason, you are free to <a href="mailto:support@moofer.app">contact us at support@moofer.app</a> and inform us any moment. We will consider requests to remove links but we are not obligated to or so or to respond to you directly.</p>
 
-		<p>Without prior approval and written permission, you may not create frames around our Webpages that alter in any way the visual presentation or appearance of our App.</p>
+				<p>We do not ensure that the information on this website is correct, we do not warrant its completeness or accuracy; nor do we promise to ensure that the website remains available or that the material on the website is kept up to date.</p>
 
-		<h2>Content Liability</h2>
+				<h2>Disclaimer</h2>
 
-		<p>We shall not be hold responsible for any content that appears on your App. You agree to protect and defend us against all claims that is rising on our App. No link(s) should appear on any Website that may be interpreted as libelous, obscene or criminal, or which infringes, otherwise violates, or advocates the infringement or other violation of, any third party rights.</p>
+				<p>To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our App and the use of this website. Use all the features at your own risk. Hereby we:</p>
 
-		<h2>Your Privacy</h2>
+				<ul>
+					<li>Limit or exclude our liability for death or personal injury</li>
+					<li>Limit or exclude our liability for fraud or fraudulent misrepresentation</li>
+					<li>Limit or exclude our liability for voiding any warranties you might have regarding products you can control with our app</li>
+					<li>Limit or exclude any of our liabilities that may not be excluded under applicable law</li>
+				</ul>
 
-		<p>Please read <a href="https://mooferapp.github.io/privacy-policy">Privacy Policy</a>.</p>
+				<p>Usage of the app in combination with other vehicles may deem your vehicle illegal. Continuation of using these products are use at your own risk.</p>
 
-		<h2>Reservation of Rights</h2>
+				<p>The limitations and prohibitions of liability set in this Section and elsewhere in this disclaimer: (a) are subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer, including liabilities arising in contract, in tort and for breach of statutory duty.</p>
 
-		<p>We reserve the right to request that you remove all links or any particular link to our App. You approve to immediately remove all links to our App upon request. We also reserve the right to amen these terms and conditions and it’s linking policy at any time. By continuously linking to our App, you agree to be bound to and follow these linking terms and conditions.</p>
-
-		<h2>Removal of links</h2>
-
-		<p>If you find any link on our App that is offensive for any reason, you are free to <a href="mailto:mooferapp@gmail.com">contact us at mooferapp@gmail.com</a> and inform us any moment. We will consider requests to remove links but we are not obligated to or so or to respond to you directly.</p>
-
-		<p>We do not ensure that the information on this website is correct, we do not warrant its completeness or accuracy; nor do we promise to ensure that the website remains available or that the material on the website is kept up to date.</p>
-
-		<h2>Disclaimer</h2>
-
-		<p>To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our App and the use of this website. Use all the features at your own risk. Hereby we:</p>
-
-		<ul>
-			<li>Limit or exclude our or your liability for death or personal injury</li>
-			<li>Limit or exclude our or your liability for fraud or fraudulent misrepresentation</li>
-			<li>Limit any of our or your liabilities in any way that is not permitted under applicable law</li>
-			<li>Exclude any of our or your liabilities that may not be excluded under applicable law</li>
-			<li>Exclude our liability for voiding any warranties you might have regarding products you can control with our app</li>
-		</ul>
-
-		<p>Usage of the app in combination with other vehicles may deem your vehicle illegal. Continuation of using these products are use at your own risk.</p>
-
-		<p>The limitations and prohibitions of liability set in this Section and elsewhere in this disclaimer: (a) are subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer, including liabilities arising in contract, in tort and for breach of statutory duty.</p>
-
-		<p>As long as the website and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.</p>
-	</div>
-</body>
+				<p>As long as the website and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.</p>
+			</div>
+		</div>
+		<div class="section footer">
+			<div class="downloadButton centerh">Download now</div>
+			<Div class="footerText centerh">
+				<a href="https://moofer.app/privacy-policy" class="legalLink">Privacy Policy</a><a href="https://moofer.app/terms-and-conditions" class="legalLink">Terms and Conditions</a><a href="https://moofer.app/contact" class="legalLink" style="margin-right:0">Contact</a>
+			</Div>
+		</div>
+		<div class="grey"></div>
+		<div class="downloadModal center">
+			<div class="modalTitle">Choose your platform</div>
+			<center>
+				<a href="https://apps.apple.com/us/app/moofer/id1550970114" target="_blank"><img src="/imgs/appStore.png" class="modalPlatformLink"></a><a href="https://play.google.com/store/apps/details?id=com.moofer.app" target="_blank"><img src="/imgs/playStore.png" class="modalPlatformLink"></a>
+			</center>
+		</div>
+		<script type="text/javascript">
+			$(".downloadButton").on('click', function(){
+				if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
+					window.open('https://play.google.com/store/apps/details?id=com.moofer.app','_blank');
+				} else if(navigator.userAgent.toLowerCase().indexOf("iphone") > -1){
+					window.open('https://apps.apple.com/us/app/moofer/id1550970114','_blank');
+				} else {
+					$(".downloadModal, .grey").addClass("on");
+				}
+			});
+			$(".grey").on('click', function(){
+				$(".downloadModal, .grey").removeClass("on");
+			});
+		</script>
+	</body>
 </html>

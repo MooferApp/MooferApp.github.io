@@ -1,16 +1,41 @@
+<!-- 
+
+||=====================================================||
+|| ███╗   ███╗ █████╗  █████╗ ███████╗███████╗██████╗  ||
+|| ████╗ ████║██╔══██╗██╔══██╗██╔════╝██╔════╝██╔══██╗ ||
+|| ██╔████╔██║██║  ██║██║  ██║█████╗  █████╗  ██████╔╝ ||
+|| ██║╚██╔╝██║██║  ██║██║  ██║██╔══╝  ██╔══╝  ██╔══██╗ ||
+|| ██║ ╚═╝ ██║╚█████╔╝╚█████╔╝██║	  ███████╗██║  ██║ ||
+|| ╚═╝	   ╚═╝ ╚════╝  ╚════╝ ╚═╝	  ╚══════╝╚═╝  ╚═╝ ||
+||=====================================================||
+
+
+This software is licenced. You may not
+- Republish material from Moofer
+- Sell, rent or sub-license material from Moofer
+- Reproduce, duplicate or copy material from Moofer
+- Redistribute content from Moofer
+
+See the Terms of Service here:
+https://moofer.app/terms-and-conditions/
+
+Proudly designed and developed with ☕ by Quinten Adema.
+
+-->
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Moofer - Get more out of your VanMoof</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<meta name="title" content="Moofer - Get more out of your VanMoof">
-		<meta name="description" content="Moofer allows you to access previously inaccessible features of VanMoof bikes. Use voucher code ADV-VR11-DRBG-04CQ to get a €100 discount on your bike.">
-		<meta name="keywords" content="Moofer,app,VanMoof,bike,referral,discount,voucher,100,price,VanMoofer,App">
+		<meta name="description" content="Moofer allows you to access previously inaccessible features of VanMoof bikes. Use coupon code ADV-VR11-DRBG-04CQ to get a €100 discount on your bike.">
+		<meta name="keywords" content="Moofer,app,VanMoof,bike,referral,coupon,discount,voucher,100,price,VanMoofer,App">
 		<meta name="robots" content="index, follow">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="language" content="English">
 		<meta name="author" content="Quinten Adema">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover" name="viewport">
 		<link rel="icon" type="image/png" sizes="32x32" href="/imgs/favicons/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/imgs/favicons/favicon-16x16.png">
@@ -22,87 +47,288 @@
 		<style type="text/css">
 			body {
 				font-family: 'Poppins', sans-serif;
+				background: #000;
 				overflow-x: hidden;
+				margin: 0;
 			}
-			.body{
-				width: 600px;
-				max-width: 90%;
-				transform: translateX(-50%);
-				left: 50%;
-				position: absolute;
-				padding: 5vh 0;
+			.section {
+				width: 100%;
+				padding: 100px 0;
+				color: #fff;
+				transition: 0.6s padding cubic-bezier(.35,.79,.32,1);
 			}
-			.legalLink {
-				font-size: 12px;
-				color: #888;
-				margin-right: 20px;
+			.section1 {
+				background: #1A1A21;
+			}
+			.section1.on {
+				padding-top: 170px;
+			}
+			.section2 {
+				background: linear-gradient(#1A1A21, #000);
 			}
 			.icon {
-				border-radius: 15px;
+				position: relative;
+				border-radius: 30px;
+				box-shadow: 0 0 70px -20px #ffff48;
+			}
+			.centerh {
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			.centerv {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			.center {
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%,-50%);
+			}
+			.slogan {
+				position: relative;
+				text-align: center;
+				padding: 0 20px;
+			}
+			.subSlogan {
+				position: relative;
+				text-align: center;
+				padding: 0 20px;
+				margin: -10px 0 30px;
+				max-width: 500px;
+				font-size: 18px;
+				color: #ccc;
+			}
+			h1 {
+				margin-top: 30px;
+			}
+			.info {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				z-index: 1;
+				color: #fff;
+				text-align: center;
+				padding: 5px 0;
+				background: rgba(255, 255, 72, 0.5);
+				transition: 0.6s transform cubic-bezier(.35,.79,.32,1);
+				transform: translateY(-100px);
+				backdrop-filter: blur(8px);
+			}
+			.info.on {
+				transform: translateY(0);
+			}
+			.downloadButton, .copyButton {
+				padding: 10px 20px;
+				border-radius: 30px;
+				background: #3377F6;
+				position: relative;
+				display: inline-block;
+				font-size: 20px;
+				font-weight: bold;
+				margin-top: 20px;
+				cursor: pointer;
+				transition: 0.2s cubic-bezier(.35,.79,.32,1);
+			}
+			.copyButton {
+				background: #555;
+			}
+			.downloadButton:hover, .copyButton:hover {
+				transform: translate(-50%, 2px);
+			}
+			.sectionTitle {
+				text-align: center;
+				font-size: 50px;
+				margin-top: 0;
+			}
+			::-webkit-scrollbar {
+				background-color: rgb(0, 0, 0);
+				height: 10px;
+				width: 10px;
+			}
+			::-webkit-scrollbar-button {
+				height: 0;
+				width: 0;
+			}
+			::-webkit-scrollbar-thumb {
+				background: #555;
+				border-radius: 10px;
+				transform: 0.2s background ease;
+			}
+			::-webkit-scrollbar-thumb:hover {
+				background: #999;
+			}
+			.sectionText, .footerText, .sectionList {
+				text-align: center;
+				max-width: 500px;
+				padding: 0 20px;
+				position: relative;
+				font-size: 18px;
+				color: #ccc;
+			}
+			.sectionList {
+				text-align: left;
+				color: #fff;
+				margin-top: 75px;
+				padding: 0 40px;
+			}
+			.sectionList li {
+				margin: 5px 0;
+				font-size: 16px;
+			}
+			.footerText {
+				margin-top: 100px;
+			}
+			.footer {
+				background: #1A1A21;
+				margin: 100px 0 0;
+			}
+			.section5 {
+				background: #3377F6;
+				margin: 100px 0;
+			}
+			::selection {
+				color: black !important;
+				background: white !important;
+			}
+			.legalLink {
+				color: #888;
+				margin-right: 50px;
+				white-space: nowrap;
+				text-decoration: none;
+				font-weight: bold;
+			}
+			.dualPane {
+				max-width: 100%;
+				width: 400px;
 				display: inline-block;
 				vertical-align: middle;
-				width: 80px;
-				margin-right: 15px;
 			}
-			.referralCode {
-				font-size: 28px;
+			.dualPane img {
+				width: calc(100% - 40px);
+				padding: 0 20px;
+				max-height: 100%;
+				height: 300px;
+				object-fit: contain;
+			}
+			.copyInput {
+				position: fixed;
+				top: -1000px;
+			}
+			.grey {
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.5);
+				z-index: 1;
+				left: 0;
+				top: 0;
+				transition: 0.2s opacity ease;
+			}
+			.downloadModal {
+				position: fixed;
+				max-width: 400px;
+				width: calc(90% - 40px);
+				padding: 20px;
+				background: #fff;
+				border-radius: 20px;
+				z-index: 2;
+				transition: 0.2s opacity ease, 0.4s transform ease;
+				transform: translate(-50%, -60%);
+			}
+			.modalTitle {
+				font-size: 24px;
 				font-weight: bold;
-				display: block;
-				margin: 15px 0;
+				margin-bottom: 30px;
 			}
-			hr {
-				margin: 50px 0;
-			}
-			.youtubeIframe {
-				max-width: 100%;
-			}
-			.AppStore, .PlayStore {
-				width: 200px;
+			.modalPlatformLink {
+				width: calc(50% - 20px);
+				margin: 10px;
 				cursor: pointer;
+				min-width: 220px;
 			}
-			.AppStore {
-				margin-right: 50px; 
+			.grey:not(.on), .downloadModal:not(.on) {
+				pointer-events: none;
+				opacity: 0;
 			}
-			li {
-				margin:10px 0;
+			.downloadModal:not(.on) {
+				transform: translate(-50%, -50%);
 			}
-			@media screen and (max-width: 500px) {
-				.icon {
-					display: block;
-					left: 50%;
-					position: relative;
-					margin-bottom: 20px;
-					transform: translateX(-50%);
-				}
-				h1 {
-					text-align: center;
-					margin-bottom: 50px;
-				}
-				.AppStore {
-					margin-right: 0;
-					margin-bottom: 20px;
-					display: block; 
-				}
+			.infoCopyButton {
+				padding: 2px 10px;
+				border-radius: 5px;
+				border: 2px solid rgba(255, 255, 72, 0.7);
+				cursor: pointer;
+				margin: 5px 10px;
+				font-size: 14px;
+				display: inline-block;
+				transition: 0.2s cubic-bezier(.35,.79,.32,1);
 			}
-			.discount {
-				font-size: 16px;
-				text-align: left;
-				font-weight: normal;
+			.infoCopyButton:hover {
+				transform: translateY(1px);
 			}
 		</style>
 	</head>
 	<body>
-		<div class="body">
-			<h1><img src="imgs/icon.png" class="icon">Welcome to Moofer!</h1>
-			<p>
-				Moofer allows you to access previously inaccessible features of VanMoof bikes.<br>
-				<i>Please note that currently only S3, X3, S2 (beta) and X2 (beta) bikes are supported.</i>
-			</p>
-			<center style="margin:50px 0">
-				<a href="https://apps.apple.com/us/app/moofer/id1550970114" target="_blank"><img src="assets/AppStore.png" class="AppStore"></a><a href="http://play.google.com/store/apps/details?id=com.moofer.app" target="_blank"><img src="assets/PlayStore.png" class="PlayStore"></a>
+		<div class="info">Thinking about buying a VanMoof? Use code <b>ADV-VR11-DRBG-04CQ</b> to get € 100 off. <div class="infoCopyButton">Copy code</div></div>
+		<div class="section section1">
+			<img src="imgs/icon.png" class="icon centerh">
+			<h1 class="slogan">Get more out of your VanMoof, with Moofer.</h1>
+			<div class="subSlogan centerh">Moofer allows you to access previously inaccessible features of VanMoof bikes.</div>
+			<div class="downloadButton centerh">Download now</div>
+			<!-- <a href="https://apps.apple.com/us/app/moofer/id1550970114" target="_blank"><img src="imgs/AppStore.png" class="AppStore"></a><a href="http://play.google.com/store/apps/details?id=com.moofer.app" target="_blank"><img src="imgs/PlayStore.png" class="PlayStore"></a> -->
+		</div>
+		<div class="section section2">
+			<center>
+				<div class="dualPane">
+					<img src="imgs/mooferDash.png">
+				</div><div class="dualPane">
+					<h2 class="sectionTitle">Upgrade your ride</h2>
+					<div class="sectionText centerh">Moofer is by many seen as the default app for VanMoof bikes with more features than the official app such as a clean dashboard.</div>
+				</div>
 			</center>
-			<h2>Previously inaccessible</h2>
-			<ul>
+		</div>
+		<div class="section section3">
+			<center>
+				<div class="dualPane">
+					<img src="imgs/mooferSettings.png">
+				</div><div class="dualPane">
+					<h2 class="sectionTitle">More control</h2>
+					<div class="sectionText centerh">Moofer allows you to access the full region settings (including 💨 mode with up to 37 km/h / 23mph of assistance) and even allows the use of manual shifting.</div>
+				</div>
+			</center>
+		</div>
+		<div class="section section4">
+			<center>
+				<div class="dualPane">
+					<img src="imgs/mooferSmart.png" class="dualPaneImageSmall">
+				</div><div class="dualPane">
+					<h2 class="sectionTitle">Smarter rides</h2>
+					<div class="sectionText centerh">Smart Speed, Smart Range and Smart Notifications allow you to keep your focus on your ride instead of on your bike.</div>
+				</div>
+			</center>
+		</div>
+		<div class="section section4">
+			<center>
+				<div class="dualPane">
+					<img src="imgs/mooferUI.png">
+				</div><div class="dualPane">
+					<h2 class="sectionTitle">Beautiful UI</h2>
+					<div class="sectionText centerh">Moofer supports full Light and Dark modes, with additional German, Dutch, French, Danish and Portugese language support.</div>
+				</div>
+			</center>
+		</div>
+		<div class="section section5">
+			<h2 class="sectionTitle">Don't have a VanMoof yet?</h2>
+			<div class="sectionText centerh" style="color:#fff">Thinking about buying a VanMoof to use with Moofer? Use code <b style="font-size:24px;margin:0 10px">ADV-VR11-DRBG-04CQ</b> to get € 100 off.</div>
+			<input type="text" class="copyInput" value="ADV-VR11-DRBG-04CQ">
+			<br>
+			<div class="copyButton centerh">Copy code</div>
+		</div>
+		<div class="section section6">
+			<h2 class="sectionTitle">All of the features</h2>
+			<div class="sectionText centerh">Moofer has even more tricks up its sleeve. A full feature list can be found here:</div>
+			<ul class="sectionList centerh">
 				<li>Region / max. speed selection including offroad mode</li>
 				<li>Assist mode 5</li>
 				<li>Manual shifting</li>
@@ -119,47 +345,76 @@
 				<li>Jukebox</li>
 				<li>Full English, Dutch, German, French and Danish translations</li>
 				<li>Full light and dark mode</li>
-				<li>...and more!</li>
 			</ul>
-			<br>
-			<i>This app makes certain features of the bike accessible which may be illegal to use in certain jurisdictions. It’s the rider’s responsibility to ensure compliance with all applicable laws and regulations.</i><br>
-			<hr>
-			<h2>Support me</h2>
-			<h1 class="discount">
-				If you don't already have VanMoof bike, you can buy one using my referral code:
-				<b class="referralCode">ADV-VR11-DRBG-04CQ</b>
-				to get <b>100,-</b> off Peace of Mind or any accessories you bundle with your order!
-				<br><br><br>
-				If you already have a VanMoof, you could always support me by buying me a coffee :)
-			</h1>
-			<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="Vfi01CAXS" data-color="#FFDD00" data-emoji="" data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
-			<br>
-			<hr>
-			<h2>How to set up Moofer</h2>
-			<br>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/BW4EmIp0BEM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="youtubeIframe"></iframe>
-			<br>
-			<hr>
-			<br>
-			<br>
-			<h2>Feature roadmap</h2>
-			<p>If you want to suggest any features that should be added to the app, please do not hesitate and <a href="https://mooferapp.github.io/contact">shoot an e-mail</a>. The current feature roadmap looks like this:</p>
-			<ul>
-				<li>Online leaderboards</li>
-				<li>Bike maintenance articles</li>
-				<li>Monthly alert to check tire pressure</li>
-				<li>Jukebox loop mode</li>
-				<li>GPS ride tracking</li>
-				<li>Sound based ride navigation</li>
-				<li>Smartwatch support</li>
-				<li>Widgets</li>
-				<li>Apple HealthKit and Google Fit support</li>
-				<li>... and more!</li>
-			</ul>
-			<br>
-			<br>
-			<br>
-			<a href="https://mooferapp.github.io/privacy-policy" class="legalLink">Privacy policy</a><a href="https://mooferapp.github.io/terms-and-conditions" class="legalLink">Terms and conditions</a><a href="https://mooferapp.github.io/contact" class="legalLink">Contact</a>
+			</div>
 		</div>
+		<div class="section section5">
+			<h2 class="sectionTitle">And more coming soon</h2>
+			<div class="sectionText centerh" style="color:#fff">More features (such as navigation, Watch support & Strava support) should come soon.</div>
+		</div>
+		<div class="section section6">
+			<center>
+				<div class="dualPane">
+					<img src="imgs/mooferCharge.png" class="dualPaneImageSmall">
+				</div><div class="dualPane">
+					<h2 class="sectionTitle">Healty battery</h2>
+					<div class="sectionText centerh">Moofer can notify you that your bike is done charging, even when the app is disconnected, by intelligently calculating the time it takes to charge.</div>
+				</div>
+			</center>
+		</div>
+		<div class="section section6">
+			<center>
+				<div class="dualPane">
+					<img src="imgs/mooferIFTTT.png" class="dualPaneImageSmall">
+				</div><div class="dualPane">
+					<h2 class="sectionTitle">Customize</h2>
+					<div class="sectionText centerh">Moofer supports IFTTT and Siri Shortcuts. Hook it up to disable the charger when your bike hits 80%, or make your own cutom function.</div>
+				</div>
+			</center>
+		</div>
+		<div class="section section5">
+			<h2 class="sectionTitle">Don't have a VanMoof yet?</h2>
+			<div class="sectionText centerh" style="color:#fff">Thinking about buying a VanMoof to use with Moofer? Use code <b style="font-size:24px;margin:0 10px">ADV-VR11-DRBG-04CQ</b> to get € 100 off.</div>
+			<input type="text" class="copyInput" value="ADV-VR11-DRBG-04CQ">
+			<br>
+			<div class="copyButton centerh">Copy code</div>
+		</div>
+		<div class="section footer">
+			<div class="downloadButton centerh">Download now</div>
+			<Div class="footerText centerh">
+				<a href="https://moofer.app/privacy-policy" class="legalLink">Privacy Policy</a><a href="https://moofer.app/terms-and-conditions" class="legalLink">Terms and Conditions</a><a href="https://moofer.app/contact" class="legalLink" style="margin-right:0">Contact</a>
+			</Div>
+		</div>
+		<div class="grey"></div>
+		<div class="downloadModal center">
+			<div class="modalTitle">Choose your platform</div>
+			<center>
+				<a href="https://apps.apple.com/us/app/moofer/id1550970114" target="_blank"><img src="/imgs/appStore.png" class="modalPlatformLink"></a><a href="https://play.google.com/store/apps/details?id=com.moofer.app" target="_blank"><img src="/imgs/playStore.png" class="modalPlatformLink"></a>
+			</center>
+		</div>
+		<script type="text/javascript">
+			setTimeout(function(){
+				$(".info, .section1").addClass("on");
+			}, 3000);
+			$(".copyButton, .infoCopyButton").on('click', function(){
+				copyInput=$(".copyInput")[0];
+				copyInput.select();
+				copyInput.setSelectionRange(0, 99999);
+				document.execCommand("copy");
+				$(this).html("Copied the code!");
+			});
+			$(".downloadButton").on('click', function(){
+				if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
+					window.open('https://play.google.com/store/apps/details?id=com.moofer.app','_blank');
+				} else if(navigator.userAgent.toLowerCase().indexOf("iphone") > -1){
+					window.open('https://apps.apple.com/us/app/moofer/id1550970114','_blank');
+				} else {
+					$(".downloadModal, .grey").addClass("on");
+				}
+			});
+			$(".grey").on('click', function(){
+				$(".downloadModal, .grey").removeClass("on");
+			});
+		</script>
 	</body>
 </html>
